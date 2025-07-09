@@ -1,0 +1,14 @@
+<canvas id="3d-bg" class="fixed top-0 h-full w-full bg"></canvas>
+
+<script>
+  import { Viewer } from "../viewer/Viewer";
+  import { sources } from "../viewer/utils/Source";
+
+  document.addEventListener("astro:page-load", () => {
+    const canvas = document.getElementById("3d-bg");
+
+    const yay = canvas && new Viewer(canvas as HTMLCanvasElement, sources);
+
+    console.log(yay);
+  });
+</script>
