@@ -27,9 +27,9 @@ export class Title {
     this.body = new CANNON.Body({
       mass: 1,
       position:
-        window.innerWidth > 768
+        window.innerWidth >= 768
           ? new CANNON.Vec3(0, 2, 0)
-          : new CANNON.Vec3(0, 2.5, 0),
+          : new CANNON.Vec3(0, 4, 0),
       shape: new CANNON.Box(new CANNON.Vec3(1.5, 0, 1.5)),
     });
 

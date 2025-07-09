@@ -32,12 +32,20 @@ export class Camera {
     this.setInstance();
   }
 
-  setInstance() {
-    if (window.innerWidth > 768) {
-      this.instance.position.set(0, 0, 2.5);
+  private positionResponsiveCam() {
+    if (window.innerWidth >= 1024) {
+      this.instance.position.set(0, 0, 3);
+    } else if (window.innerWidth >= 768) {
+      this.instance.position.set(0, 0, 4);
+    } else if (window.innerWidth >= 640) {
+      this.instance.position.set(0, 0, 5.5);
     } else {
-      this.instance.position.set(0, 0, 8);
+      this.instance.position.set(0, 0, 8.5);
     }
+  }
+
+  setInstance() {
+    this.positionResponsiveCam();
     this.scene.add(this.instance);
   }
 
@@ -49,6 +57,7 @@ export class Camera {
   resize() {
     this.instance.aspect = this.sizes.width / this.sizes.height;
     this.instance.updateProjectionMatrix();
+    this.positionResponsiveCam();
   }
 
   update() {
