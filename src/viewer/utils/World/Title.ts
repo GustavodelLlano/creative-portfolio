@@ -54,7 +54,7 @@ export class Title {
 
   update() {
     this.model.position.copy(this.body.position);
-    this.model.position.y += this.scroll.y * 0.00225;
+    this.model.position.y += this.scroll.y * 0.003;
     this.model.position.z -= this.scroll.y * 0.007;
 
     if (this.scroll.y === 0) {
