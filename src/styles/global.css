@@ -1,1 +1,31 @@
 @import "tailwindcss";
+
+@font-face {
+  font-family: "Mac";
+  src: url("/fonts/Mac-Regular.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Mac";
+  src: url("/fonts/Mac-Bold.woff2") format("woff2");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Mac-Stencil";
+  src: url("/fonts/Mac-Stencil.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@theme {
+  --font-mac: "Mac", sans-serif;
+  --font-mac-bold: "Mac", sans-serif;
+  --font-mac-stencil: "Mac-Stencil", sans-serif;
+}

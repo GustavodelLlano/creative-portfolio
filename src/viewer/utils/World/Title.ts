@@ -39,7 +39,7 @@ export class Title {
 
   private cycleDuration = 15000;
   private rotationDuration = 2500;
-  private rotationStartTime: number = performance.now() + 15000;
+  private rotationStartTime: number = performance.now() + 10000;
 
   setModel() {
     const { x, y, z } = this.body.position;
@@ -77,7 +77,7 @@ export class Title {
     } else {
       // Reset: next rotation in 15s after scroll stops
       this.rotationStartTime = performance.now() + this.cycleDuration;
-      this.model.rotation.x = 0;
+      this.model.rotation.x = -this.scroll.y * 0.005;
     }
   }
 }

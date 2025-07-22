@@ -1,0 +1,93 @@
+---
+import { Image } from "astro:assets";
+import Sit from "/public/images/Sit.webp";
+
+const skills = [
+  { name: "UX UI", level: 1 },
+  { name: "CSS", level: 2 },
+  { name: "REACT", level: 3 },
+  { name: "TYPESCRIPT", level: 3 },
+  { name: "SIT", level: 46 },
+  { name: "GIT", level: 3 },
+  { name: "NODE", level: 2 },
+  { name: "ARROZ A BANDA", level: 3 },
+  { name: "API REST", level: 1 },
+  { name: "TESTING", level: 2 },
+];
+
+const skillsLoop = [...skills, ...skills];
+---
+
+<section id="skill-carousel">
+  <div class="slider">
+    <div class="list">
+      {
+        skillsLoop.map(({ name, level }) => (
+          <div class="item">
+            {name === "SIT" ? (
+              <span class="clamped">
+                <Image class="sit" src={Sit} alt="drawing of sitting person" />
+              </span>
+            ) : (
+              <div class="clamped">
+                <span class="font-mac-stencil">{name}</span>
+                <span class="font-bold font-mac-bold">{"*".repeat(level)}</span>
+              </div>
+            )}
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>
+<style>
+  .sit {
+    position: fixed;
+    top: clamp(-60px, -8vw, -48px);
+    height: clamp(70px, 12vw, 175px);
+    vertical-align: middle;
+    aspect-ratio: 1024 / 1536;
+    width: auto;
+    object-fit: contain;
+  }
+  .clamped {
+    display: flex;
+    align-items: baseline;
+    font-size: clamp(18px, 2.75vw, 38px);
+  }
+  .slider {
+    width: 100%;
+    overflow: visible;
+    border-bottom: clamp(3px, 0.45vw, 5px) solid #020203;
+    border-top: clamp(3px, 0.45vw, 5px) solid #020203;
+    height: clamp(32px, 4.75vw, 68px);
+    position: relative;
+  }
+  .slider .list {
+    display: flex;
+    align-items: center;
+    gap: clamp(3rem, 4vw, 6rem);
+    animation: scroll 25s linear infinite;
+    width: max-content;
+  }
+  .slider .item {
+    flex: 0 0 auto;
+    padding: 0 1.5rem;
+    max-width: 100vw;
+  }
+  .slider .item span {
+    display: block;
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  @keyframes scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+</style>

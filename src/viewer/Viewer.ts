@@ -44,6 +44,10 @@ export class Viewer {
     this.resources.on("ready", () => {
       this.ready();
     });
+
+    this.scroll.on("scroll", () => {
+      this.scroll.update();
+    });
   }
 
   resize() {
