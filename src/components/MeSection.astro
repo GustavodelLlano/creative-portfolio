@@ -1,1 +1,93 @@
-<div class="h-screen w-full bg-black"></div>
+<section class="w-full bg-black py-40">
+  <div class="container m-auto px-26">
+    <h2
+      id="who-is-gus"
+      class="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl text-[var(--color-primary)] text-bold text-center font-mac-bold"
+    >
+      <span>¿</span>PERO QUIÉN ES GUS<span>?</span>
+    </h2>
+    <div class="space-y-8 mt-8">
+      <p
+        class="text-white text-center text-lg sm:text-xl md:text-2xl lg:text-3xl font-mac font-medium leading-normal paragraph"
+      >
+        Gustavo del Llano vive orgulloso en el barrio madrileño de Usera, con
+        raíces burgalesas y la cabeza dividida entre el diseño y el código.
+        Aunque estudió ADE y Turismo, fue en el verano de 2021 cuando descubrió
+        en el desarrollo web el equilibrio perfecto entre creatividad y lógica.
+        *
+      </p>
+
+      <p
+        class="text-white text-center text-lg sm:text-xl md:text-2xl lg:text-3xl font-mac font-medium leading-normal paragraph"
+      >
+        Su motivación no nace solo de crear bonitas y funcionales interfaces, y
+        de aplicar lógica en el código. Hay creatividad en el proceso de
+        desarrollo, imaginar el qué y el cómo, infinitas maneras de resolver un
+        mismo problema.
+      </p>
+      <p
+        class="text-white text-center text-lg sm:text-xl md:text-2xl lg:text-3xl font-mac font-medium leading-normal paragraph"
+      >
+        Y así es como nazco yo, al menos como desarrollador, en un terreno común
+        entre lo visual y lo estructural, entre la intuición del diseñador y la
+        precisión del desarrollador.
+      </p>
+    </div>
+  </div>
+</section>
+
+<script>
+  import gsap from "gsap";
+  import { SplitText } from "gsap/all";
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+  const titleGus = document.querySelector("#who-is-gus");
+  const titleWords = new SplitText(titleGus, {
+    type: "words",
+  });
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  titleWords.words.forEach((word, index) => {
+    gsap.from(word, {
+      y: 100,
+      clipPath: "inset(0 0 100% 0)",
+      rotation: 5,
+      duration: 0.75,
+      ease: "power2.out",
+      delay: 0.12 * index,
+      scrollTrigger: {
+        trigger: titleGus,
+        start: "top bottom-=50px",
+      },
+    });
+  });
+
+  gsap.from(titleGus, {
+    opacity: 0,
+    duration: 0.75,
+    ease: "power1.out",
+    scrollTrigger: {
+      trigger: titleGus,
+      start: "top bottom-=50px",
+    },
+  });
+
+  const paragraphs = document.querySelectorAll(".paragraph");
+  const paragraphSplit = new SplitText(paragraphs, {
+    type: "lines",
+  });
+  paragraphSplit.lines.forEach((line, index) => {
+    gsap.from(line, {
+      y: 50,
+      opacity: 0,
+      duration: 0.8,
+      ease: "power2.out",
+      delay: 0.15 * index,
+      scrollTrigger: {
+        trigger: line,
+        start: "top bottom-=20px",
+      },
+    });
+  });
+</script>

@@ -9,7 +9,7 @@
 }
 
 @font-face {
-  font-family: "Mac";
+  font-family: "Mac-Bold";
   src: url("/fonts/Mac-Bold.woff2") format("woff2");
   font-weight: bold;
   font-style: normal;
@@ -26,6 +26,7 @@
 
 @theme {
   --font-mac: "Mac", sans-serif;
-  --font-mac-bold: "Mac", sans-serif;
+  --font-mac-bold: "Mac-Bold", sans-serif;
   --font-mac-stencil: "Mac-Stencil", sans-serif;
+  --color-primary: #f04a55;
 }

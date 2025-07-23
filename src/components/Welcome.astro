@@ -8,8 +8,6 @@
   document.addEventListener("astro:page-load", () => {
     const canvas = document.getElementById("3d-bg");
 
-    const yay = canvas && new Viewer(canvas as HTMLCanvasElement, sources);
-
-    console.log(yay);
+    new Viewer(canvas as HTMLCanvasElement, sources);
   });
 </script>

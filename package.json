@@ -12,11 +12,13 @@
     "@tailwindcss/vite": "^4.1.11",
     "astro": "^5.11.0",
     "cannon": "^0.6.2",
+    "gsap": "^3.13.0",
     "tailwindcss": "^4.1.11",
     "three": "^0.178.0"
   },
   "devDependencies": {
     "@types/cannon": "^0.1.13",
+    "@types/gsap": "^3.0.0",
     "@types/three": "^0.178.0"
   }
 }
