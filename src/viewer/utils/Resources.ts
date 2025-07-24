@@ -54,7 +54,7 @@ export class Resources extends EventEmitter {
             gradientTexture.magFilter = THREE.NearestFilter;
 
             const material = new THREE.MeshToonMaterial({
-              color: 0xff505c,
+              color: 0xFF1E56,
               gradientMap: gradientTexture,
             });
 

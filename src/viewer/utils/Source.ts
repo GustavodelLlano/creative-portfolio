@@ -4,7 +4,7 @@ export const sources: Source[] = [
   {
     name: "title",
     type: "gltf.model",
-    path: ["/models/tecnica.glb"],
+    path: ["/models/bienvenido.glb"],
   },
 ];
 
