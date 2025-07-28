@@ -2,7 +2,7 @@
   <div class="container m-auto px-26">
     <h2
       id="who-is-gus"
-      class="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl text-[var(--color-primary)] text-bold text-center font-mac-bold">
+      class="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl text-[var(--color-primary)] text-bold text-center font-mac-bold leading-tight">
       <span>¿</span>PERO QUIÉN ES GUS<span>?</span>
     </h2>
     <div class="space-y-8 mt-8">
@@ -45,27 +45,18 @@
 
   titleWords.words.forEach((word, index) => {
     gsap.from(word, {
-      y: 100,
+      y: 120,
+      opacity: 0,
       clipPath: "inset(0 0 100% 0)",
       rotation: 5,
-      duration: 0.75,
+      duration: 1,
       ease: "power2.out",
       delay: 0.12 * index,
       scrollTrigger: {
         trigger: titleGus,
-        start: "top bottom-=50px",
+        start: "top bottom-=250px",
       },
     });
-  });
-
-  gsap.from(titleGus, {
-    opacity: 0,
-    duration: 0.75,
-    ease: "power1.out",
-    scrollTrigger: {
-      trigger: titleGus,
-      start: "top bottom-=50px",
-    },
   });
 
   const paragraphs = document.querySelectorAll(".paragraph");
