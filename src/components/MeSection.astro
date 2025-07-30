@@ -40,12 +40,12 @@
   import { SplitText } from "gsap/all";
   import { ScrollTrigger } from "gsap/ScrollTrigger";
 
+  gsap.registerPlugin(ScrollTrigger);
+
   const titleGus = document.querySelector("#who-is-gus");
   const titleWords = new SplitText(titleGus, {
     type: "words",
   });
-
-  gsap.registerPlugin(ScrollTrigger);
 
   titleWords.words.forEach((word, index) => {
     gsap.from(word, {
@@ -67,6 +67,7 @@
   const paragraphSplit = new SplitText(paragraphs, {
     type: "lines",
   });
+
   paragraphSplit.lines.forEach((line, index) => {
     gsap.from(line, {
       y: 50,
